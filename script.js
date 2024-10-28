@@ -1,3 +1,10 @@
+import explodeSound from "./public/sounds/explode.m4a";
+import hitSound from "./public/sounds/hit.m4a";
+import laserSound from "./public/sounds/laser.m4a";
+import thrustSound from "./public/sounds/thrust.m4a";
+import musicLow from "./public/sounds/music-low.m4a";
+import musicHigh from "./public/sounds/music-high.m4a";
+
 const FPS = 30; // frames per second
 const FRICTION = 0.7; // friction coefficient of space (0 = no friction, 1 = max friction)
 
@@ -40,13 +47,13 @@ var canv = document.getElementById("gameCanvas");
 var ctx = canv.getContext("2d");
 
 // set up sound effects
-var fxLaser = new Sound("sounds/laser.m4a", 5, 0.5);
-var fxExplode = new Sound("sounds/explode.m4a", 5);
-var fxHit = new Sound("sounds/hit.m4a");
-var fxThrust = new Sound("sounds/thrust.m4a");
+var fxLaser = new Sound(laserSound, 5, 0.5);
+var fxExplode = new Sound(explodeSound, 5);
+var fxHit = new Sound(hitSound);
+var fxThrust = new Sound(thrustSound);
 
 // set up the music
-var music = new Music("sounds/music-low.m4a", "sounds/music-high.m4a");
+var music = new Music(musicLow, musicHigh);
 var roidsLeft, roidsTotal;
 
 // set up the game parameters
